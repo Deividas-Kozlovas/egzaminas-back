@@ -1,6 +1,6 @@
-const Answer = require("../models/questionAnswer");
+const Answer = require("../models/answerModel");
 
-exports.cerateAnswer = async (req, res) => {
+exports.createAnswer = async (req, res) => {
   try {
     const answer = await Answer.create(req.body);
     return res.status(200).json({
@@ -16,6 +16,7 @@ exports.cerateAnswer = async (req, res) => {
     });
   }
 };
+
 
 exports.updateAnswer = async (req, res) => {
   try {
@@ -46,7 +47,7 @@ exports.updateAnswer = async (req, res) => {
 };
 
 
-exports.getAlAnswers = async (req, res) => {
+exports.getAllAnswers = async (req, res) => {
   try {
     const answer = await Answer.find();
 
@@ -105,7 +106,7 @@ exports.deleteAnswer = async (req, res) => {
 
     return res.status(200).json({
       status: "success",
-      message: "Ad deleted successfully",
+      message: "answer deleted successfully",
     });
   } catch (err) {
     return res.status(400).json({

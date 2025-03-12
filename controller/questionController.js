@@ -105,7 +105,7 @@ exports.deleteQuestion = async (req, res) => {
 
     return res.status(200).json({
       status: "success",
-      message: "Ad deleted successfully",
+      message: "question deleted successfully",
     });
   } catch (err) {
     return res.status(400).json({

@@ -1,18 +1,15 @@
 const mongoose = require("mongoose");
 
-const answesrsSchema = new mongoose.Schema(
+const answerSchema = new mongoose.Schema(
   {
-    question: {
+    answer: {
       type: String,
-      required: [true, "Question is required"],
+      required: [true, "answer is required"],
     },
-    status: {
-      type: String,
-    },
-    ansqers: [
+    question: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Answers",
+        ref: "question",
       },
     ],
     user: [
@@ -27,6 +24,6 @@ const answesrsSchema = new mongoose.Schema(
   }
 );
 
-const Answers = mongoose.model("Answers", answesrsSchema);
+const Answer = mongoose.model("Answer", answerSchema);
 
-module.exports = Answers;
+module.exports = Answer;

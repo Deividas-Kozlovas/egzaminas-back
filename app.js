@@ -12,12 +12,12 @@ if (process.env.NODE_ENV === "development") {
 
 const userRouter = require("./routes/userRouter");
 const questionRouter = require("./routes/questionRouter");
+const answerRouter = require("./routes/answerRouter");
 
 
 app.use(express.json());
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/question", questionRouter);
-
-
+app.use("/api/v1/answer", answerRouter);
 
 module.exports = app;

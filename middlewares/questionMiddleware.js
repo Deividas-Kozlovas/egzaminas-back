@@ -9,8 +9,8 @@ exports.validateParamId = async (req, res, next, val) => {
     });
   }
 
-  const ad = await Question.findById(val);
-  if (!ad) {
+  const question = await Question.findById(val);
+  if (!question) {
     return ser.status(404).json({
       status: "fail",
       message: "Question ID is invalid",
@@ -19,34 +19,13 @@ exports.validateParamId = async (req, res, next, val) => {
   next();
 };
 
-// exports.validateBodyId = async (req, res, next) => {
-//   const { question } = req.body;
-
-//   if (!mongoose.Types.ObjectId.isValid(ad)) {
-//     return res.status(400).json({
-//       status: "fail",
-//       message: "Ad ID format is invalid in body",
-//     });
-//   }
-
-//   const adExists = await Ad.findById(ad);
-//   if (!adExists) {
-//     return res.status(404).json({
-//       status: "fail",
-//       message: "Ad not found",
-//     });
-//   }
-
-//   next();
-// };
-
 exports.validate = async (req, res, next) => {
   const { question } = req.body;
 
   if (!question ) {
     return res.status(400).json({
       status: "fail",
-      message: "Question are required",
+      message: "question are required",
     });
   }
 
