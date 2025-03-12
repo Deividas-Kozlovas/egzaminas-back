@@ -11,10 +11,13 @@ if (process.env.NODE_ENV === "development") {
 }
 
 const userRouter = require("./routes/userRouter");
+const questionRouter = require("./routes/questionRouter");
 
 
 app.use(express.json());
 app.use("/api/v1/user", userRouter);
+app.use("/api/v1/question", questionRouter);
+
 
 
 module.exports = app;

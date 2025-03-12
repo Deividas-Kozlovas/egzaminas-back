@@ -14,7 +14,7 @@ exports.protect = async (req, res, next) => {
         .json({ status: "fail", message: "Not logged in!" });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET); // Replace with your JWT secret
+    const decoded = jwt.verify(token, process.env.JWT_SECRET); 
 
     const user = await User.findById(decoded.id);
     if (!user) {

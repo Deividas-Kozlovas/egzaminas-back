@@ -9,7 +9,7 @@ const questionSchema = new mongoose.Schema(
     status: {
       type: String,
     },
-    ansqers: [
+    answers: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Answers",
